@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 import * as actions from '../actions';
 
+import Result from './result';
+
 class RecentResults extends Component {
 
     componentDidMount() {
@@ -14,9 +16,7 @@ class RecentResults extends Component {
         const results = this.props.recentResults.map((result, id) => {
             if(id < 3) {
                 return (
-                    <li key={id}>
-                        {result.name}
-                    </li>
+                    <Result {...result} key={id} />
                 )
             }
         })
