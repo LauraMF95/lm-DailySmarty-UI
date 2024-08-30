@@ -5,7 +5,7 @@ import axios from "axios";
 export function fetchRecentResults() {
     return function(dispatch) {
         axios
-            .get("https://pokeapi.co/api/v2/ability/")
+            .get("https://swapi.dev/api/people/")
             .then(response => {
                 console.log(response.data.results);
                 dispatch({
