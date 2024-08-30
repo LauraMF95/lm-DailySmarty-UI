@@ -1,20 +1,20 @@
-import { SET_RECENT_POSTS } from "./types";
+import { SET_RECENT_RESULTS } from "./types";
 
 import axios from "axios";
 
-export function fetchRecentPosts() {
+export function fetchRecentResults() {
     return function(dispatch) {
         axios
-            .get("https://swapi.dev/api/")
+            .get("https://pokeapi.co/api/v2/ability/")
             .then(response => {
-                console.log(response.data);
+                console.log(response.data.results);
                 dispatch({
-                    type: SET_RECENT_POSTS,
-                    payload: response.data
+                    type: SET_RECENT_RESULTS,
+                    payload: response.data.results
                 })
             })
             .catch(error => {
-                console.log("fetchRecentPosts error", error);
+                console.log("fetchRecentResults error", error);
             })
     }
 }
