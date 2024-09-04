@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
+
 import Result from './result';
 
 class ResultsResults extends Component {
 
     renderResults() {
         const results = this.props.results.map((result, id) => {
-            return <Result key={id} {...result}/>
+            return <Result type="result" key={id} {...result}/>
         })
         return results;
     }

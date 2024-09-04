@@ -9,18 +9,50 @@ class Result extends Component {
         return films;
     }
 
-    render() {
-        return (
-        <li className='recent-result'>
-            <div className='recent-result__name'>
-                {this.props.name}
-            </div>
+    renderStarships() {
+        let starships = this.props.starships.map((starship, id) => {
+            return (
+                <div className="result-starship" key={id}>
+                    <div className="result-starship__box"></div>
+                    <div className="result-starship__link">
+                        <a href={starship}>Useful link #{id + 1}</a>
+                    </div>
+                </div>
+            )
+        }) 
+        return starships;
+    }
 
-            <div className='recent-result__films'>
-                {this.renderFilms()}
-            </div>
-        </li>
-        )
+    render() {
+        if(this.props.type === "recent") {
+            return (
+                <li className='recent-result'>
+                    <div className='recent-result__name'>
+                        {this.props.name}
+                    </div>
+        
+                    <div className='recent-result__films'>
+                        {this.renderFilms()}
+                    </div>
+                </li>
+            )
+        } else if (this.props.type === "result") {
+            return (
+                <li className='result-result'>
+                    <div className='result-result__films'>
+                        {this.renderFilms()}
+                    </div>
+
+                    <div className='result-result__name'>
+                        {this.props.name}
+                    </div>
+
+                    <div className='result-result__starships'>
+                        {this.renderStarships()}
+                    </div>
+                </li>
+            )
+        }
     }
 }
 

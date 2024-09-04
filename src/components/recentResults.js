@@ -16,7 +16,7 @@ class RecentResults extends Component {
         const results = this.props.recentResults.map((result, id) => {
             if(id < 3) {
                 return (
-                    <Result {...result} key={id} />
+                    <Result type="recent" {...result} key={id} />
                 )
             }
         })
