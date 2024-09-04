@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
+import AnimateHeight from 'react-animate-height';
 
 class Result extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            height: 0
+        };
+    }
 
     renderFilms() {
         let films = this.props.films.map((film, id) => {
@@ -44,12 +53,21 @@ class Result extends Component {
                     </div>
 
                     <div className='result-result__name'>
-                        {this.props.name}
+                        <a href={this.props.name}
+                            onMouseEnter={() => this.setState({ height: 70 })}
+                            onMouseLeave={() => this.setState({ height: 0 })}
+                        >
+                        {this.props.name}</a>
                     </div>
 
-                    <div className='result-result__starships'>
-                        {this.renderStarships()}
-                    </div>
+                    <AnimateHeight
+                        duration={500}
+                        height={this.state.height}
+                    >
+                        <div className='result-result__starships'>
+                            {this.renderStarships()}
+                        </div>
+                    </AnimateHeight>
                 </li>
             )
         }
