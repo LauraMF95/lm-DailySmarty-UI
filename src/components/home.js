@@ -10,8 +10,9 @@ import * as actions from "../actions";
 class Home extends Component {
 
   handleSearchBarSubmit(query) {
-    this.props.fetchResultsWithQuery(query);
-    this.props.history.push("/results");
+    this.props.fetchResultsWithQuery(query, () => {
+      this.props.history.push("/results");
+    });
 }
 
   render() {

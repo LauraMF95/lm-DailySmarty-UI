@@ -10,7 +10,6 @@ export function fetchRecentResults() {
         axios
             .get("https://swapi.dev/api/people/")
             .then(response => {
-                console.log(response.data.results);
                 dispatch({
                     type: SET_RECENT_RESULTS,
                     payload: response.data.results
@@ -22,16 +21,16 @@ export function fetchRecentResults() {
     }
 }
 
-export function fetchResultsWithQuery(query) {
+export function fetchResultsWithQuery(query, callback) {
     return function(dispatch) {
         axios
             .get(`https://swapi.dev/api/people/`)
             .then(response => {
-                console.log(response.data.results);
                 dispatch({
                     type: SET_RESULTS_RESULTS,
                     payload: response.data.results
                 })
+                if (callback) { callback() };
             })
             .catch(error => {
                 console.log("fetchResultsWithQuery error", error);
