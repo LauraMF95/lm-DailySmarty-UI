@@ -24,7 +24,7 @@ export function fetchRecentResults() {
 export function fetchResultsWithQuery(query, callback) {
     return function(dispatch) {
         axios
-            .get(`https://swapi.dev/api/people/`)
+            .get(`https://swapi.dev/api/people/?search=${query}`)
             .then(response => {
                 dispatch({
                     type: SET_RESULTS_RESULTS,
