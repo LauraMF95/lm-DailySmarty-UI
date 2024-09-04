@@ -1,7 +1,10 @@
-import { SET_RECENT_RESULTS } from "../actions/types";
+import { 
+    SET_RECENT_RESULTS,
+    SET_RESULTS_RESULTS
+} from "../actions/types";
 
 const INIT_STATE = {
-    results: [],
+    resultsResults: [],
     recentResults: []
 }
 
@@ -11,6 +14,10 @@ export default function(state = INIT_STATE, action) {
             const recentResults = action.payload;
             return {...state, recentResults}
     
+        case SET_RESULTS_RESULTS:
+            const resultsResults = action.payload;
+            return {...state, resultsResults}
+
         default:
             return state;
     }
