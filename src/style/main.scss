@@ -1,3 +1,20 @@
 .result-films {
     margin: 0 4px;
 }
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.app-wrapper {
+    display: grid;
+    justify-content: center;
+}
+
+.home {
+    height: calc(100vh - 33px);
+    width: 86vw;
+    display: grid;
+    align-content: space-around;
+    justify-items: center;
+}
