@@ -11,11 +11,11 @@ class Result extends Component {
         };
     }
 
-    renderFilms() {
-        let films = this.props.films.map((film, id) => {
-            return <span className="result-films" key={id}>{film}</span>
+    renderSpecies() {
+        let species = this.props.species.map((specie, id) => {
+            return <span className="result-species" key={id}>{specie}</span>
         })
-        return films;
+        return species;
     }
 
     renderStarships() {
@@ -40,16 +40,16 @@ class Result extends Component {
                         {this.props.name}
                     </div>
         
-                    <div className='recent-result__films'>
-                        {this.renderFilms()}
+                    <div className='recent-result__species'>
+                        {this.renderSpecies()}
                     </div>
                 </li>
             )
         } else if (this.props.type === "result") {
             return (
                 <li className='result-result'>
-                    <div className='result-result__films'>
-                        {this.renderFilms()}
+                    <div className='result-result__species'>
+                        {this.renderSpecies()}
                     </div>
 
                     <div className='result-result__name'>
