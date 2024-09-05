@@ -16,6 +16,12 @@ body {
     width: 86vw;
     display: grid;
     align-content: space-around;
+    justify-items: stretch;
+}
+
+.logo-main,
+.recent-results {
+    display: grid;
     justify-items: center;
 }
 
