@@ -11,14 +11,6 @@ body {
     justify-content: center;
 }
 
-.home {
-    height: calc(100vh - 16px);
-    width: 66vw;
-    display: grid;
-    align-content: space-around;
-    //justify-items: stretch;
-}
-
 .logo-main,
 .recent-results {
     display: grid;
@@ -35,5 +27,8 @@ $color-gray-one: #666666;
 $color-gray-two: #B3B3B3;
 $color-blue-one: #0079FF;
 
+@import './mixins';
 @import './searchBar';
 @import './recentResults';
+@import './home';
+@import './results';

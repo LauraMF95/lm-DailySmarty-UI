@@ -1,0 +1,6 @@
+@mixin default-page-layout {
+    height: calc(100vh - 16px);
+    width: 66vw;
+    display: grid;
+    align-content: space-around;
+}
