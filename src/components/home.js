@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Logo from "./logo";
-import SearchBar from './SearchBar';
+import SearchBar from './searchBar';
 import RecentResults from './recentResults';
 
 import { connect } from 'react-redux';
