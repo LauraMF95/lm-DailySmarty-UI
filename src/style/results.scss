@@ -1,6 +1,6 @@
 .results {
     // @include default-page-layout();
-    height: calc(100vh - 16px);
+    height: calc(100vh - 68px);
     width: 66vw;
     display: grid;
     margin-top: 52px;
@@ -40,6 +40,24 @@
     }
 
     .result-result__starships {
+        //display: flex;
 
+    }
+}
+
+.result-starship {
+    min-height: 70px;
+    display: flex;
+
+    .result-starship__box {
+        min-width: 70px;
+        background-color: $color-gray-three;
+        margin-right: 16px;
+    }
+
+    .result-starship__link a {
+        color: $color-gray-one;
+        font-size: 14px;
+        line-height: 17px;
     }
 }

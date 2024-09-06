@@ -47,16 +47,16 @@ class Result extends Component {
             )
         } else if (this.props.type === "result") {
             return (
-                <li className='result-result'>
+                <li className='result-result'
+                    onMouseEnter={() => this.setState({ height: 70 })}
+                    onMouseLeave={() => this.setState({ height: 0 })}
+                >
                     <div className='result-result__species'>
                         {this.renderSpecies()}
                     </div>
 
                     <div className='result-result__name'>
-                        <a href={this.props.name}
-                            onMouseEnter={() => this.setState({ height: 70 })}
-                            onMouseLeave={() => this.setState({ height: 0 })}
-                        >
+                        <a href={this.props.name}>
                         {this.props.name}</a>
                     </div>
 
