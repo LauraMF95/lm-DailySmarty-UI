@@ -40,14 +40,15 @@
     }
 
     .result-result__starships {
-        //display: flex;
-
+        display: flex;
     }
 }
 
 .result-starship {
     min-height: 70px;
     display: flex;
+    flex-basis: 205px;
+    margin-right: 37px;
 
     .result-starship__box {
         min-width: 70px;

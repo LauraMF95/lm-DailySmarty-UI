@@ -34,7 +34,12 @@ class Result extends Component {
                     </div>
                 </div>
             )
-        }) 
+        })
+        
+        if(starships == 0) {
+            return <div className='no-content'>No Starships</div>
+        }
+
         return starships;
     }
 
