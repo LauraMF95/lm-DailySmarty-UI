@@ -18,13 +18,19 @@ class Result extends Component {
         return species;
     }
 
+    getNameForStarship(str) {
+        var n = str.lastIndexOf('starships');
+        var starship = str.substring(n, str.length - 1);  
+        return starship;
+    }
+
     renderStarships() {
         let starships = this.props.starships.map((starship, id) => {
             return (
                 <div className="result-starship" key={id}>
                     <div className="result-starship__box"></div>
                     <div className="result-starship__link">
-                        <a href={starship}>Useful link #{id + 1}</a>
+                        <a href={starship}>{this.getNameForStarship(starship)}</a>
                     </div>
                 </div>
             )
